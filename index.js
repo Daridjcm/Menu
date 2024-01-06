@@ -1,4 +1,3 @@
-// Given variables
 const dishData = [
     {
         name: "Italian pasta",
@@ -25,8 +24,9 @@ const tax = 1.20;
 
 // Implement getPrices()
 function getPrices(taxBoolean) {
-    let resultPrices = document.getElementById('resultPrices');
-    resultPrices.innerHTML = '';
+    let resultPrices = document.getElementById("resultPrices");
+    resultPrices.innerHTML = "";
+
     for (let dish of dishData) {
         let finalPrice;
         if (taxBoolean == true) {
@@ -37,35 +37,28 @@ function getPrices(taxBoolean) {
             resultPrices.innerHTML = "You need to pass a boolean to the getPrices call!";
             return;
         };
-        resultPrices.innerHTML += `Dish: ${dish.name} <br> Price: $${finalPrice}<br><br>`;
+        resultPrices.innerHTML += `
+        <span class="dish-name">${dish.name}</span> <span class="final-price">$${finalPrice}</span> <br><br>
+        </div>`;
     };
 };
 
 // Implement getDiscount()
-let resultDiscount = document.getElementById('resultDiscount');
-let btnDiscount = document.getElementById('btnInputDiscount');
-btnDiscount.addEventListener ('click', function algo(){
-    if (getPrices(true)) {
-        getDiscount()
-    } else if (getPrices(false)) {
-        getDiscount()
-    } else {
-        resultDiscount.innerHTML = "Please, come again."
-    }
-})
+function getDiscount() {
+    var inputGuests = document.getElementById("inputGuests").value;
+    var discount = 0;
 
-function getDiscount(guests) {
-    let discount = 0;
-    let inputGuests = document.getElementById('inputGuests');
-    resultDiscount.innerHTML = '';
-    guests = inputGuests.value;
-    if (guests < 5) {
-        discount = 5;
-        resultDiscount.innerHTML = "Discount is: $" + discount;
-    } else if (guests >= 5) {
+    if (inputGuests >= 5 && inputGuests < 10) {
         discount = 10;
-        resultDiscount.innerHTML = "Discount is: $" + discount;
-    } else {
-        resultDiscount.innerHTML = "The second argument must be a number between 0 and 10";
+    } else if (inputGuests >= 10 && inputGuests < 15) {
+        discount = 15;
+    } else if (inputGuests >= 15 && inputGuests < 20) {
+        discount = 20;
+    } else if (inputGuests >= 20 && inputGuests < 25) {
+        discount = 25;
+    } else if (inputGuests >= 25) {
+        discount = 30;
     };
+    document.getElementById("resultDiscount").innerText = "Discount: " + discount + "%";
+    document.getElementById("btnInputDiscount").disabled = false;
 };
