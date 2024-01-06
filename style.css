@@ -1,10 +1,96 @@
-#resultPrices {
+/* CSS for Menu */
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    position: relative;
+    cursor: pointer;
+    color: #1d1d1d;
+}
+
+label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    padding: 10px;
-    background-color: rgb(247, 246, 246);
+    display: block;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 10px;
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    background-color: #efef72;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: all 0.30s ease-in-out;
+    background-color: #ebd464;
+    box-shadow: 4px 4px 10px 0 rgba(48, 48, 48, 0.30);
+
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+p {
+    background-color: #f2f2f2;
     border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+/* CSS for variables in JS */
+.final-price {
+    font-weight: bold;
+    color: #72bd47;
+}
+
+/* CSS for title */
+.effectPincel::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #dbc834;
+    transition: width 0.3s ease;
+}
+  
+.effectPincel:hover::before {
     width: 80%;
-    min-width: 50%;
-    max-width: 40%;
 }
