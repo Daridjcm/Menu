@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Want foods?</title>
+    <link rel="shortcut icon" href="iconMenu.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="centerElements">
-        <h1>Click for see the menu and prices. Please choose</h1>
+        <h1 class="effectPincel" id="title">Menu Dishes</h1>
         <button type="button" id="btnInputTrue" onclick="getPrices(true)">Prices with tax</button>
         <button type="button" id="btnInputFalse" onclick="getPrices(false)">Prices without tax</button>
         <p id="resultPrices"></p>
-        <h2>Want discount of menu?</h2>
-            <label>Numbers of guests:
-                <input type="number" id="inputGuests">
-                <button type="button" id="btnInputDiscount" onclick="algo()">See discount for guests</button>    
-            </label>
-            <p id="resultDiscount"></p>
-        </div>
+        <h2>Want a discount on the menu?</h2>
+        <label>Number of guests:
+            <input type="number" id="inputGuests">
+            <button type="button" id="btnInputDiscount" onclick="getDiscount(false)">See discount for guests</button>    
+        </label>
+        <p id="resultDiscount"></p>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
