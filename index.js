@@ -1,22 +1,22 @@
 const dishData = [
     {
-        name: "Italian pasta",
+        name: 'Italian pasta',
         price: 9.55
     },
     {
-        name: "Rice with veggies",
+        name: 'Rice with veggies',
         price: 8.65
     },
     {
-        name: "Chicken with potatoes",
+        name: 'Chicken with potatoes',
         price: 15.55
     },
     {
-        name: "Vegetarian Pizza",
+        name: 'Vegetarian Pizza',
         price: 6.45
     },
     {
-        name: "Pepperoni Pizza",
+        name: 'Pepperoni Pizza',
         price: 4.53
     },
 ];
@@ -24,8 +24,8 @@ const tax = 1.20;
 
 // Implement getPrices()
 function getPrices(taxBoolean) {
-    let resultPrices = document.getElementById("resultPrices");
-    resultPrices.innerHTML = "";
+    let resultPrices = document.getElementById('resultPrices');
+    resultPrices.innerHTML = '';
 
     for (let dish of dishData) {
         let finalPrice;
@@ -34,18 +34,18 @@ function getPrices(taxBoolean) {
         } else if (taxBoolean == false) {
             finalPrice = dish.price;
         } else {
-            resultPrices.innerHTML = "You need to pass a boolean to the getPrices call!";
+            resultPrices.innerHTML = 'You need to pass a boolean to the getPrices call!';
             return;
         };
         resultPrices.innerHTML += `
-        <span class="dish-name">${dish.name}</span> <span class="final-price">$${finalPrice}</span> <br><br>
+        <span class='dish-name'>${dish.name}</span> <span class='final-price'>$${finalPrice}</span> <br><br>
         </div>`;
     };
 };
 
 // Implement getDiscount()
 function getDiscount() {
-    var inputGuests = document.getElementById("inputGuests").value;
+    var inputGuests = document.getElementById('inputGuests').value;
     var discount = 0;
 
     if (inputGuests >= 5 && inputGuests < 10) {
@@ -59,6 +59,6 @@ function getDiscount() {
     } else if (inputGuests >= 25) {
         discount = 30;
     };
-    document.getElementById("resultDiscount").innerText = "Discount: " + discount + "%";
-    document.getElementById("btnInputDiscount").disabled = false;
+    document.getElementById('resultDiscount').innerText = 'Discount: ' + discount + '%';
+    document.getElementById('btnInputDiscount').disabled = false;
 };
